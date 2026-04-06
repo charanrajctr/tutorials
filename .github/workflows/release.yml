@@ -1,0 +1,25 @@
+name: Auto Release 1.0.0
+on:
+  push:
+    branches:
+      - v1-dev
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: 1.0.0
+          name: Version 1.0.0
+          target_commitish: v1-dev
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
