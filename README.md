@@ -119,4 +119,4 @@ To run the integration tests, use the command:
 
 `mvn clean install -Pintegration-jdk8`
 
-depending on the list where our module exists
+depending on the list where our module exists 
